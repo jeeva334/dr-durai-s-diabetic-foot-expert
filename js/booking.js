@@ -4,7 +4,7 @@ const form = document.getElementById("fm");
 
 form.addEventListener("submit", async function (event) {
   event.preventDefault();
-
+alert("Submit button is working!");
   // Read the existing form fields
   const patientName = document.getElementById("nm").value.trim();
   const patientPhone = document.getElementById("ph").value.trim();
@@ -37,4 +37,5 @@ form.addEventListener("submit", async function (event) {
     console.error("Submission error:", error);
     alert("முன்பதிவு செய்ய முடியவில்லை. மீண்டும் முயற்சிக்கவும்.");
   }
+  
 });
