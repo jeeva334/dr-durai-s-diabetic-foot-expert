@@ -23,10 +23,10 @@ form.addEventListener("submit", function (event) {
 
   console.log("Sending form data:", formData.toString());
 
-  fetch("https://script.google.com/macros/s/AKfycbxQNyXXfSFcAm7p2NOjLiJWRcGmn0KqRhy1ytFBU5kUJERTMo6gP2QMRIEAa_DMqUp7/exec", {
-    method: "POST",
-    body: formData
-  })
+  fetch(scriptURL , {
+  method: "POST",
+  body: formData
+})
   .then(() => {
     alert("Request sent. Check your Google Sheet.");
   })

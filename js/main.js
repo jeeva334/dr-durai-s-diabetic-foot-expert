@@ -15,7 +15,7 @@ $('#fm').addEventListener('submit',e=>{e.preventDefault();let ok=true;
  ok&=setE($('#gn'),document.querySelector('input[name=g]:checked')?'':REQ);
  
  ok&=setE($('#cn'),$('#cn').checked?'':REQ);
- if(ok){$('#fw').style.display='none';$('#ok').style.display='block';$('#fm').reset()}});
+ if(ok){$('#fw').style.display = 'none';$('#ok').style.display='block'}});
 (function(){const hd=document.querySelector('header'),pg=document.createElement('div');pg.id='pg';hd.appendChild(pg);
 function sc(){const y=scrollY,m=document.documentElement.scrollHeight-innerHeight;hd.classList.toggle('sc',y>10);pg.style.transform='scaleX('+(m>0?y/m:0)+')'}addEventListener('scroll',sc,{passive:true});sc();
 const G=[['.hl>div','z'],['.cap','z'],['.st',''],['.about .pic','l'],['.about>div:last-child>*','r'],['#faq h2','' ],['details',''],['.ft>div',''],['.steps','']];
