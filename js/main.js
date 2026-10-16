@@ -13,7 +13,7 @@ $('#fm').addEventListener('submit',e=>{e.preventDefault();let ok=true;
  const p=$('#ph').value.replace(/[\s-]/g,'').replace(/^(\+91|91|0)(?=\d{10}$)/,'');
  ok&=setE($('#ph'),!$('#ph').value.trim()?REQ:(/^[6-9]\d{9}$/.test(p)?'':PH));
  ok&=setE($('#gn'),document.querySelector('input[name=g]:checked')?'':REQ);
- ok&=setE($('#md'),$('#md').value?'':REQ);ok&=setE($('#tm'),$('#tm').value?'':REQ);
+ 
  ok&=setE($('#cn'),$('#cn').checked?'':REQ);
  if(ok){$('#fw').style.display='none';$('#ok').style.display='block';$('#fm').reset()}});
 (function(){const hd=document.querySelector('header'),pg=document.createElement('div');pg.id='pg';hd.appendChild(pg);
