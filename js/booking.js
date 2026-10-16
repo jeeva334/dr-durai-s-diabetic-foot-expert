@@ -21,14 +21,14 @@ form.addEventListener("submit", function (event) {
   formData.append("gender", patientGender);
   formData.append("mode", consultationMode);
 
-  console.log("Sending form data:", formData.toString());
+//   console.log("Sending form data:", formData.toString());
 
   fetch(scriptURL , {
   method: "POST",
   body: formData
 })
   .then(() => {
-    alert("Request sent. Check your Google Sheet.");
+   
   })
   .catch(error => {
     console.error("Submission error:", error);
