@@ -40,24 +40,46 @@ form.addEventListener("submit", async function (event) {
   formData.append("mode", consultationMode);
   formData.append("branch", branch);
 
-  console.log("Submitting booking:", {
-    name: patientName,
-    phone: patientPhone,
-    gender: patientGender,
-    mode: consultationMode,
-    branch: branch
-  });
+  // console.log("Submitting booking:", {
+  //   name: patientName,
+  //   phone: patientPhone,
+  //   gender: patientGender,
+  //   mode: consultationMode,
+  //   branch: branch
+  // });
 
+  
   try {
     const response = await fetch(scriptURL, {
       method: "POST",
       body: formData
     });
 
-    console.log("Apps Script response:", await response.text());
-    alert("Booking request submitted. Please verify the Google Sheet.");
+    const result = await response.text();
+
+    console.log("Apps Script response:", result);
+
+    if (!response.ok || result.trim() !== "Saved") {
+      throw new Error(
+        "Appointment submission failed: " + result
+      );
+    }
+    form.reset();
+    console.log("Appointment saved successfully.");
+
+    // Show your existing success popup here.
+
   } catch (error) {
     console.error("Submission error:", error);
-    alert("Could not confirm submission. Please check the Google Sheet before trying again.");
+
+    // Replace this with your existing form error UI if available.
+    const errorMessage = document.getElementById("errorMessage");
+
+    if (errorMessage) {
+      errorMessage.textContent =
+        "Unable to submit your appointment. Please try again.";
+      errorMessage.hidden = false;
+    }
   }
+
 });
