@@ -1,4 +1,4 @@
-const scriptURL = "https://script.google.com/macros/s/AKfycbxcLgGNWQX6lvQLs0CshmF5JzE6C07gPoT6uF6bGi6t9UVbrUEJ2DAojUSszFU0lSHS/exec";
+const scriptURL = "https://script.google.com/macros/s/AKfycbwyMqyLbMLvKALLlPYBc0fB36cVGBxK_8wxr_su6tXMZqPo818ZzbsOrLpZMh0aoq0c/exec";
 
 const form = document.getElementById("fm");
 
@@ -28,10 +28,10 @@ form.addEventListener("submit", async function (event) {
   const consultationMode = document.getElementById("md").value;
   const branch = getBranch();
 
-  if (!document.getElementById("cn").checked) {
-    alert("Please accept the consent.");
-    return;
-  }
+  // if (!document.getElementById("cn").checked) {
+  //   alert("Please accept the consent.");
+  //   return;
+  // }
 
   const formData = new URLSearchParams();
   // formData.append("name", patientName);
