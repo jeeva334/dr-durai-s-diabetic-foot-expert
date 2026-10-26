@@ -21,7 +21,7 @@ function getBranch() {
 form.addEventListener("submit", async function (event) {
   event.preventDefault();
 
-  const patientName = document.getElementById("nm").value.trim();
+  // const patientName = document.getElementById("nm").value.trim();
   const patientPhone = document.getElementById("ph").value.trim();
   const patientGender =
     document.querySelector('input[name="g"]:checked')?.value || "";
@@ -34,7 +34,7 @@ form.addEventListener("submit", async function (event) {
   }
 
   const formData = new URLSearchParams();
-  formData.append("name", patientName);
+  // formData.append("name", patientName);
   formData.append("phone", patientPhone);
   formData.append("gender", patientGender);
   formData.append("mode", consultationMode);
